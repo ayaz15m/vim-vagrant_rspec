@@ -1,3 +1,3 @@
-command! RspecAllTest call vagrant-rspec#Rspecall()
-command! RspecFileTest call vagrant-rspec#Rspecfile()
-command! RspecLineTest call vagrant-rspec#Rspecline()
+command! RspecAllTest call vagrant_rspec#Rspecall()
+command! RspecFileTest call vagrant_rspec#Rspecfile()
+command! RspecLineTest call vagrant_rspec#Rspecline()
