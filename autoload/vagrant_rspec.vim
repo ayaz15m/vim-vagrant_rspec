@@ -6,9 +6,15 @@ function! s:is_spec()
   return reverse(split(expand('%:p:.:t'), '_'))[0] == 'spec.rb'
 endfunction
 
+function! s:is_vagrant()
+  return filereadable('Vagrantfile')
+endfunction
+
 function! s:run_rspec(command)
-  if s:is_spec()
+  if s:is_spec() && s:is_vagrant()
     execute "!vagrant ssh -c '".a:command."'"
+  elseif s:is_spec()
+    execute '!'.a:command
   else
     echo 'Retry from spec file'
   endif
