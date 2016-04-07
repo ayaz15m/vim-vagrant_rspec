@@ -15,14 +15,14 @@ function! s:run_rspec(command)
 endfunction
 
 " rspec functions
-function! RspecAll()
+function! vagrant_rspec#Rspecall()
   call s:run_rspec('bundle exec rspec')
 endfunction
 
-function! RspecFile()
+function! vagrant_rspec#RspecFile()
   call s:run_rspec('bundle exec rspec '.s:file)
 endfunction
 
-function! RspecLine()
+function! vagrant_rspec#RspecLine()
   call s:run_rspec('bundle exec rspec '.s:file.':'.line('.'))
 endfunction
